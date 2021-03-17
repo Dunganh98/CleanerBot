@@ -2,7 +2,7 @@
  * CCleanerBot.h
  *
  *  Created on: 11 Dec 2019
- *      Author: stdgpham
+ *      Author: Dung Anh
  */
 
 #ifndef CCLEANERBOT_H_
@@ -30,10 +30,10 @@ public:
 	CCleanerBot();
 	virtual ~CCleanerBot();
 	double getAngle();
-	void move(double route);
-	void turn (double angle);
+	void move(double a_route);
+	void turn (double a_angle);
 	void print();
-	void setWorld(World* world);
+	void setWorld(World* a_world);
 	void replay();
 	void clear();
 };
