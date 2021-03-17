@@ -3,10 +3,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 // Header-Dateien
-#include <iostream>		// Header für die Standard-IO-Objekte (z.B. cout, cin)
+#include <iostream>		// Header fÃ¼r die Standard-IO-Objekte (z.B. cout, cin)
 #include <stdlib.h>
-// TODO: Fügen Sie hier weitere benötigte Header-Dateien ein
-
 using namespace std;	// Erspart den scope vor Objekte der
 // C++-Standard-Bibliothek zu schreiben
 // z.B. statt "std::cout" kann man "cout" schreiben
@@ -18,73 +16,44 @@ using namespace std;	// Erspart den scope vor Objekte der
 // Dient als Testrahmen, von hier aus werden die Klassen aufgerufen
 int main (void)
 {
-	// TODO: Fügen Sie ab hier Ihren Programmcode ein
+	// TODO: FÃ¼gen Sie ab hier Ihren Programmcode ein
 	cout << "CleanerBot gestarted." << endl << endl;
-bool programende = false;
-	World a;
-	CCleanerBot b;
-	b.setWorld(&a);
+	bool programmende = false;
+	World m_world;
+	CCleanerBot m_bot;
+	m_bot.setWorld(&m_world);
 	Room room;
 	room.addWall(Wall(Point2D(-3.2,-2.2),Point2D(-3.2,2.2)));
 	room.addWall(Wall(Point2D(-3.2,2.2),Point2D(3.2,2.2)));
 	room.addWall(Wall(Point2D(3.2,2.2),Point2D(3.2,-2.2)));
 	room.addWall(Wall(Point2D(3.2,-2.2),Point2D(-3.2,-2.2)));
 	a.setRoom(room);
-	while(programende == false){
-		string s = a.getKey();
-		if( s == "up"){
+	while(programmende == false){
+		string input = m_world.getKey();
+		if( input == "up"){
 			//put the positions into m_track
-			b.move(1);
+			m_bot.move(1);
 		}
-		else if(s == "down"){
+		else if(input == "down"){
 			// turn only
-			b.turn(180);
+			m_bot.turn(180);
 		}
 
-		else if(s == "left"){
-			b.turn(45);
+		else if(input == "left"){
+			m_bot.turn(45);
 		}
-		else if(s == "right"){
-			b.turn(-45);
+		else if(input == "right"){
+			m_bot.turn(-45);
 		}
-		else if(s == "r"){
-			b.replay();
+		else if(input == "r"){
+			m_bot.replay();
 		}
-		else if(s == "c"){
-			b.clear();
+		else if(input == "c"){
+			m_bot.clear();
 		}
-		else if(s == "e"){
-			programende = true;
+		else if(input == "e"){
+			programmende = true;
 		}
 	}
-
-	//	b.move(1);
-	//	b.turn(-90);
-	//	b.move(1);
-	//	b.turn(60);
-	//	b.print();
-	//	for(int i = 0;i < 100000; i++)
-	//	{
-	//		CDynPointArray *pArr=new CDynPointArray(300000);
-	//		delete pArr;
-	//	}
-
-
-	//	CDynPointArray A1(5);
-	//	for(int i = -1000; i <-980; i++){
-	//		CPoint p(i,i);
-	//		A1.put(p);
-	//	}
-	//	A1.print();
-	//	cout << endl<<endl;
-	//	CDynPointArray A2(A1);
-	//	A2.print();
-
-
-
-
-
-
-
 	return 0;
 }
