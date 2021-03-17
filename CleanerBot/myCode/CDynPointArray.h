@@ -20,11 +20,11 @@ private:
 
 public:
 	CDynPointArray(int nSize =10,int nGrowthSize =10);
-	CDynPointArray(CDynPointArray& origArray);
+	CDynPointArray(CDynPointArray& a_origArray);
 	virtual ~CDynPointArray();
-	void put(CPoint point);
+	void put(CPoint a_point);
 	int getElementCount();
-	CPoint getElementAt(int index);
+	CPoint getElementAt(int a_index);
 	void print();
 	void clear();
 
