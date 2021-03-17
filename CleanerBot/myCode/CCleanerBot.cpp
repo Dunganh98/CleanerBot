@@ -2,7 +2,7 @@
  * CCleanerBot.cpp
  *
  *  Created on: 11 Dec 2019
- *      Author: stdgpham
+ *      Author: Dung Anh
  */
 
 #include "CCleanerBot.h"
@@ -23,16 +23,16 @@ CCleanerBot::~CCleanerBot() {
 	// TODO Auto-generated destructor stub
 }
 
-void CCleanerBot::move(double route)
+void CCleanerBot::move(double a_route)
 {
-	m_position.move(route*cos(m_angle),route * sin(m_angle));
+	m_position.move(a_route * cos(m_angle), a_route * sin(m_angle));
 	m_track.put(m_position);
 	m_world->show(m_position.getX(),m_position.getY(), m_angle, m_diameter);
 }
 
-void CCleanerBot::turn(double angle)
+void CCleanerBot::turn(double a_angle)
 {
-	m_angle = m_angle + M_PI*angle / 180;
+	m_angle = m_angle + M_PI * a_angle / 180;
 	m_world->show(m_position.getX(),m_position.getY(), m_angle, m_diameter);
 
 }
@@ -47,10 +47,10 @@ double CCleanerBot::getAngle()
 	return m_angle;
 }
 
-void CCleanerBot::setWorld(World *world)
+void CCleanerBot::setWorld(World *a_world)
 {
-	m_world = world;
-	world->show(m_position.getX(), m_position.getY(), m_angle, m_diameter);
+	m_world = a_world;
+	a_world->show(m_position.getX(), m_position.getY(), m_angle, m_diameter);
 
 }
 
