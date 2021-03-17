@@ -6,10 +6,10 @@
  */
 
 #include "CPoint.h"
-CPoint::CPoint(double x, double y)
+CPoint::CPoint(double a_x, double a_y)
 {
-	m_x = x;
-	m_y =y;
+	m_x = a_x;
+	m_y = a_y;
 }
 
 CPoint::CPoint()
@@ -25,10 +25,10 @@ CPoint::~CPoint()
 	// TODO Auto-generated destructor stub
 }
 
-void CPoint::setXY(double x, double y)
+void CPoint::setXY(double a_x, double a_y)
 {
-	m_x =x;
-	m_y =y;
+	m_x = a_x;
+	m_y = a_y;
 }
 
 double CPoint::getX()
@@ -41,8 +41,8 @@ double CPoint::getY()
 	return m_y;
 }
 
-void CPoint::move(double deltaX, double deltaY)
+void CPoint::move(double a_deltaX, double a_deltaY)
 {
-	m_x =m_x+ deltaX;
-	m_y =m_y+ deltaY;
+	m_x =m_x + a_deltaX;
+	m_y =m_y + a_deltaY;
 }
