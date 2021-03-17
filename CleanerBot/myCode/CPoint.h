@@ -15,13 +15,13 @@ private:
 	double m_y;
 
 public:
-	CPoint(double x, double y);
+	CPoint(double a_x, double a_y);
 	CPoint();
 	virtual ~CPoint();
-	void setXY(double x, double y);
+	void setXY(double a_x, double a_y);
 	double getX();
 	double getY();
-	void move(double deltaX,double deltaY);
+	void move(double a_deltaX,double a_deltaY);
 };
 
 #endif /* CPOINT_H_ */
