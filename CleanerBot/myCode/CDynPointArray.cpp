@@ -13,20 +13,21 @@ CDynPointArray::CDynPointArray(int nSize, int nGrowthSize)
 
 	m_nCurSize =nSize;
 	m_pArray = new CPoint[nSize];
-	if(m_idxNextEmpty < 0 || m_idxNextEmpty > nSize) m_idxNextEmpty = 0;
+	if(m_idxNextEmpty < 0 || m_idxNextEmpty > nSize) 
+		m_idxNextEmpty = 0;
 	m_nGrowthSize = nGrowthSize;
 }
 
-CDynPointArray::CDynPointArray(CDynPointArray &origArray)
+CDynPointArray::CDynPointArray(CDynPointArray& a_origArray)
 {
 
-	m_nCurSize = origArray.m_nCurSize;
+	m_nCurSize = a_origArray.m_nCurSize;
 	m_pArray = new CPoint[m_nCurSize];
-	m_idxNextEmpty = origArray.m_idxNextEmpty;
-	m_nGrowthSize = origArray.m_nGrowthSize;
+	m_idxNextEmpty = a_origArray.m_idxNextEmpty;
+	m_nGrowthSize = a_origArray.m_nGrowthSize;
 	for(int i = 0; i< m_nCurSize; i++)
 	{
-		m_pArray[i] = origArray.m_pArray[i];
+		m_pArray[i] = a_origArray.m_pArray[i];
 	}
 }
 
@@ -35,7 +36,7 @@ CDynPointArray::~CDynPointArray() {
 
 }
 
-void CDynPointArray::put(CPoint point)
+void CDynPointArray::put(CPoint a_point)
 {
 	if(m_idxNextEmpty == m_nCurSize)
 	{
@@ -48,7 +49,7 @@ void CDynPointArray::put(CPoint point)
 		delete []m_pArray;
 		m_pArray = temp;
 	}
-		*(m_pArray+(m_idxNextEmpty++)) = point;
+		*(m_pArray+(m_idxNextEmpty++)) = a_point;
 }
 
 int CDynPointArray::getElementCount()
@@ -56,9 +57,9 @@ int CDynPointArray::getElementCount()
 	return m_idxNextEmpty;
 }
 
-CPoint CDynPointArray::getElementAt(int index)
+CPoint CDynPointArray::getElementAt(int a_index)
 {
-	return m_pArray[index];
+	return m_pArray[a_index];
 }
 
 void CDynPointArray::print()
